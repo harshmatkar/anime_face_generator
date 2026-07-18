@@ -47,7 +47,7 @@ class GANTrainer:
         self.d_optimizer = tf.keras.optimizers.Adam(learning_rate=lr, beta_1=beta_1)
 
         # fixed noise so we can watch the *same* seeds improve over epochs
-        self.seed = tf.random.normal([16, latent_dim])
+        self.seed = tf.random.normal([16, latent_dim]) # 16 fixed noises of 100 length so we can see progress
 
         # --- checkpointing ---
         self.checkpoint = tf.train.Checkpoint(
@@ -72,7 +72,7 @@ class GANTrainer:
     @tf.function
     def train_step(self, real_images):
         batch_size = tf.shape(real_images)[0]
-        noise = tf.random.normal([batch_size, self.latent_dim])
+        noise = tf.random.normal([batch_size, self.latent_dim]) # num_of_samples * Each individual noise vector
 
         with tf.GradientTape() as g_tape, tf.GradientTape() as d_tape:
             fake_images = self.generator(noise, training=True)

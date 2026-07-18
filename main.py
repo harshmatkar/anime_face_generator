@@ -20,7 +20,7 @@ from src import GANTrainer
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Train an anime-face DCGAN")
-    parser.add_argument("--data_dir", type=str, default="data", help="Path to folder containing image subfolder(s)")
+    parser.add_argument("--data_dir", type=str, default="data/anime_faces", help="Path to folder containing image subfolder(s)")
     parser.add_argument("--output_dir", type=str, default="outputs", help="Where samples/checkpoints/models are saved")
     parser.add_argument("--epochs", type=int, default=500)
     parser.add_argument("--batch_size", type=int, default=128)

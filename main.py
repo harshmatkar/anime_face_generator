@@ -26,7 +26,7 @@ def parse_args():
     parser.add_argument("--batch_size", type=int, default=128)
     parser.add_argument("--image_size", type=int, default=64)
     parser.add_argument("--latent_dim", type=int, default=100, help="Size of latent noise vector")
-    parser.add_argument("--lr", type=float, default=2e-3, help="Learning rate")
+    parser.add_argument("--lr", type=float, default=2e-4, help="Learning rate")
     parser.add_argument("--save_every", type=int, default=50, help="Save a checkpoint every N epochs")
     return parser.parse_args()
 
